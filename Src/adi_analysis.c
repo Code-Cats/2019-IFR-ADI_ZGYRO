@@ -15,7 +15,8 @@ void ADI_DataCalibration(void)
 int dealdata=0;
 void ADI_DataDeal_Task(uint16_t rawdata)
 {
-	ADI_Data.angvel.rawdata=rawdata-ADI_Data.angvel.offset;
+	ADI_Data.angvel.rawdata=rawdata;
+	ADI_Data.angvel.rawdata-=ADI_Data.angvel.offset;
 	
 	if(ADI_Data.angvel.cali_state==0)
 	{
